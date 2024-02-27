@@ -1,0 +1,4 @@
+org: fix-me-org
+spaces:
+- fix-me-space
+enable-delete-spaces: true

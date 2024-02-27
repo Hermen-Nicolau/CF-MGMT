@@ -1,0 +1,8 @@
+org: system
+spaces:
+- system
+- notifications-with-ui
+- autoscaling
+- nfs
+- smb
+enable-delete-spaces: true

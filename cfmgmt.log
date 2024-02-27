@@ -1,0 +1,38 @@
+bosh deploy \
+-d concourse \
+./cluster/concourse.yml \
+-l versions.yml \
+-l variables.yml \
+-o ./cluster/operations/backup-atc.yml \
+-o ./cluster/operations/basic-auth.yml \
+-o ./cluster/operations/static-web.yml \
+-o ./cluster/operations/privileged-https.yml \
+-o ./cluster/operations/tls-vars.yml \
+-o ./cluster/operations/tls.yml \
+-o ./cluster/operations/encryption.yml \
+--vars-store cluster-creds.yml
+
+
+
+CFMGMT
+- Target: https://uaa.sys.h2o-2-22900.h2o.vmware.com
+
+uaa.admin_client_credentials
+identity: "admin",
+password: "ez0_7SKV_wPeTW_K07NOd6TpfzcXxl1j"
+
+- uaac token client get
+Client ID:  admin
+Client secret:  ********************************
+Successfully fetched token via client credentials grant.
+Target: https://uaa.sys.h2o-2-22900.h2o.vmware.com
+Context: admin, from client admin
+
+uaac client add cf-mgmt \
+  --name cf-mgmt \
+  --secret Zu2B3jqruW6YOH@QAmE \
+  --authorized_grant_types client_credentials,refresh_token \
+  --authorities cloud_controller.admin,scim.read,scim.write,routing.router_groups.read
+
+#export config
+cf-mgmt export-config --system-domain=sys.h2o-2-22900.h2o.vmware.com --user-id=cf-mgmt --client-secret=Zu2B3jqruW6YOH@QAmE --config-dir=./config
