@@ -36,3 +36,17 @@ uaac client add cf-mgmt \
 
 #export config
 cf-mgmt export-config --system-domain=sys.h2o-2-22900.h2o.vmware.com --user-id=cf-mgmt --client-secret=Zu2B3jqruW6YOH@QAmE --config-dir=./config
+
+
+fly -t <targetname> login -c <concourse_instance>
+fly -t merck set-pipeline -p cfmgmt-hermen\
+   -c pipeline.yml \
+   -l vars.yml \
+
+fly -t merck set-pipeline -p cfmgmt-hermen\
+   -c pipeline.yml \
+   -l config/vars.yml
+
+   —-var "ldap_password=<ldap_password>" \
+   --var "client_secret=<client_secret>" \
+   —-var "password=<org/space_admin_password>"
