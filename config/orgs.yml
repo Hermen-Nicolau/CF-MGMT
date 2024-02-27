@@ -2,8 +2,7 @@ orgs:
 - system
 - fix-me-org
 - dev
-- nonprod
-- prod
+
 enable-delete-orgs: false
 protected_orgs:
 - ^system$
