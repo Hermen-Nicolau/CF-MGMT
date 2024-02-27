@@ -38,6 +38,8 @@ uaac client add cf-mgmt \
 cf-mgmt export-config --system-domain=sys.h2o-2-22900.h2o.vmware.com --user-id=cf-mgmt --client-secret=Zu2B3jqruW6YOH@QAmE --config-dir=./config
 
 
+
+
 fly -t <targetname> login -c <concourse_instance>
 fly -t merck set-pipeline -p cfmgmt-hermen\
    -c pipeline.yml \
@@ -50,3 +52,7 @@ fly -t merck set-pipeline -p cfmgmt-hermen\
    —-var "ldap_password=<ldap_password>" \
    --var "client_secret=<client_secret>" \
    —-var "password=<org/space_admin_password>"
+
+
+
+Create org by updating the orgs.yml, creating a folder with the org name, inside it create a folder for each space, update the orgconfig, the spaces.yml and the security-group if needed. 

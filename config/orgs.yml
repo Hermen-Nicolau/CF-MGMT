@@ -2,7 +2,6 @@ orgs:
 - system
 - fix-me-org
 - dev
-
 enable-delete-orgs: false
 protected_orgs:
 - ^system$

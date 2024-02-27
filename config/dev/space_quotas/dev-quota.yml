@@ -1,0 +1,10 @@
+memory-limit: 5G
+instance-memory-limit: unlimited
+total-routes: unlimited
+total-services: "0"
+paid-service-plans-allowed: false
+total_reserved_route_ports: "0"
+total_service_keys: unlimited
+app_instance_limit: unlimited
+app_task_limit: unlimited
+log_rate_limit_bytes_per_second: unlimited

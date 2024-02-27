@@ -15,6 +15,11 @@ metadata-prefix: cf-mgmt.pivotal.io
 enable-service-access: true
 ignore-legacy-service-access: false
 service-access:
+- broker: smbbroker
+  services:
+  - service: smb
+    no_access_plans:
+    - Existing
 - broker: app-autoscaler
   services:
   - service: app-autoscaler
@@ -22,15 +27,10 @@ service-access:
     - standard
 - broker: nfsbroker
   services:
-  - service: nfs-legacy
-    no_access_plans:
-    - Existing
   - service: nfs
     no_access_plans:
     - Existing
-- broker: smbbroker
-  services:
-  - service: smb
+  - service: nfs-legacy
     no_access_plans:
     - Existing
 protected-users: []
