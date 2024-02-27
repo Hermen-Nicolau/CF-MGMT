@@ -1,5 +1,5 @@
 # your git repo uri
-git_repo_uri: ""
+git_repo_uri: "https://github.com/Hermen-Nicolau/CF-MGMT.git"
 git_repo_branch: master
 # your cf system domain
 system_domain: "sys.h2o-2-22900.h2o.vmware.com"
